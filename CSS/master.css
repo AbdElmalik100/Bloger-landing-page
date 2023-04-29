@@ -1,0 +1,544 @@
+/* Global Rules */
+* {
+    box-sizing: border-box;
+}
+:root {
+    /* Primary Colors */
+    --Light-red-CTA-text: hsl(356, 100%, 66%);
+    --Very-light-red-CTA-hover-background: hsl(355, 100%, 74%);
+    --Very-dark-blue-headings: hsl(208, 49%, 24%);
+
+    /* Neutral Colors */
+    --White-text: hsl(0, 0%, 100%);
+    --Grayish-blue-footer-text: hsl(240, 2%, 79%);
+    --Very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
+    --Very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+
+    /* Gradient Colors */
+
+    /* Background gradient - Intro/CTA mobile nav: */
+
+    --Very-light-red: hsl(13, 100%, 72%);
+    --Light-red: hsl(353, 100%, 62%);
+
+    /* Background gradient - body: */
+
+    --Very-dark-gray-blue: hsl(237, 17%, 21%);
+    --Very-dark-desaturated-blue: hsl(237, 23%, 32%);
+    
+}
+body {
+    font-size: 16px;
+    font-family: 'Overpass', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+/* Grid System */
+@media (min-width: 576px) { /* Small Devices => Landscape Phones */
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) { /* Medium Devices => Tablets */
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) { /* Desktops */
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) { /* Large Screens */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+.landing {
+    background-image: linear-gradient(to right, var(--Very-light-red), var(--Light-red));
+    height: 80vh;
+    border-bottom-left-radius: 100px;
+    position: relative;
+    overflow: hidden;
+}
+.landing > img {
+    position: absolute;
+    left: -35%;
+    top: -255%;
+}
+.landing .header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 40px 0;
+}
+.landing .header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+.landing .header nav .links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    gap: 50px;
+}
+.landing .header nav .links li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--Grayish-blue-footer-text);
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+    position: relative;
+}
+.landing .header nav .links li span {
+    pointer-events: none;
+}
+.landing .header nav .links li:hover,
+.landing .header nav .links li.active { 
+    color: var(--White-text);
+}
+.landing .header nav .links li:hover span,
+.landing .header nav .links li.active span {
+    text-decoration: underline;
+}
+.landing .header nav .links li i {
+    font-size: 8px;
+    pointer-events: none;
+}
+.landing .header nav .links li i.open {
+    transform: rotate(180deg);
+}
+.landing .header nav .reg-form {
+    display: flex;
+    flex-basis: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+.landing .header nav .reg-form .login {
+    font-size: 15px;
+    color: var(--Grayish-blue-footer-text);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.landing .header nav .reg-form .login:hover {
+    color: var(--White-text);
+    text-decoration: underline;
+}
+.landing .header nav .reg-form .signup {
+    padding: 15px 35px;
+    background-color: var(--White-text);
+    border-radius: 50px;
+    color: var(--Light-red-CTA-text);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.landing .header nav .reg-form .signup:hover {
+    background-color: var(--Very-light-red-CTA-hover-background);
+    color: var(--White-text);
+}
+
+.landing .container .intro-text {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+}
+.landing .container .intro-text h1 {
+    font-size: 55px;
+    color: var(--White-text);
+    margin-bottom: 30px;
+}
+.landing .container .intro-text p {
+    color: var(--Grayish-blue-footer-text);
+}
+.landing .container .intro-text .intro-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+.landing .container .intro-text .intro-btns span {
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.landing .container .intro-text .intro-btns .free-trail {
+    padding: 15px 20px;
+    background-color: var(--White-text);
+    color: var(--Light-red);
+    border: 1px solid var(--White-text);
+}
+.landing .container .intro-text .intro-btns .free-trail:hover {
+    color: var(--White-text);
+    background-color: var(--Very-light-red-CTA-hover-background);
+    border: 1px solid var(--Very-light-red-CTA-hover-background);
+}
+.landing .container .intro-text .intro-btns .learn {
+    padding: 15px 30px;
+    border: 1px solid var(--White-text);
+    border-radius: 50px;
+    color: var(--White-text);
+}
+.landing .container .intro-text .intro-btns .learn:hover {
+    background-color: var(--White-text);
+    color: var(--Very-light-red-CTA-hover-background);
+}
+
+.designs-section {
+    overflow: hidden;
+    padding: 0 0 100px;
+}
+.designs-section h1 {
+    text-align: center;
+    color: var(--Very-dark-blue-headings);
+    position: relative;
+    top: 100px;
+    font-size: 35px;
+}
+.designs-section .container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.container .box-txt .txt-1 {
+    margin-bottom: 100px;
+}
+.container .box-txt h2 {
+    margin-bottom: 35px;
+    font-size: 30px;
+    color: var(--Very-dark-blue-headings);
+}
+.container .box-txt p {
+    line-height: 1.7;
+    color: var(--Very-dark-grayish-blue-body-copy);
+    font-size: 17px;
+}
+.designs-section .container .editor-photo {
+    width: 50%;
+    position: relative;
+    left: 2%;
+}
+
+.art-section {
+    background-image: linear-gradient(to right, var(--Very-dark-gray-blue), var(--Very-dark-desaturated-blue));
+    position: relative;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 60vh;
+}
+.art-section .circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.art-section .circle img {
+    position: absolute;
+    top: -135%;
+    left: -15%;
+}
+.art-section .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -25%;
+    gap: 73px;
+}
+.art-section .container .text h2 {
+    color: var(--White-text);
+    font-size: 35px;
+    font-family: "Overpass";
+    margin-bottom: 0;
+}
+.art-section .container .text p {
+    color: var(--Grayish-blue-footer-text);
+    line-height: 1.8;
+    font-family: 'Overpass';
+}
+
+
+.laptop-section {
+    overflow: hidden;
+    padding: 100px 0 0;
+}
+.laptop-section .container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.laptop-section .container .laptop-photo {
+    width: 50%;
+    position: relative;
+    right: 36%;
+}
+
+.footer {
+    background-color: var(--Very-dark-black-blue-footer-background);
+    padding: 50px 0;
+    border-top-right-radius: 100px;
+}
+.footer .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.footer .container ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 12px;
+}
+.footer .container p {
+    margin-top: 10px;
+    color: var(--White-text);
+    margin-bottom: 35px;
+    font-size: 15px;
+}
+.footer .container li {
+    margin-bottom: 20px;
+}
+.footer .container li a {
+    color: var(--Grayish-blue-footer-text);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer .container li a:hover {
+    text-decoration: underline;
+}
+
+/* Drop Down List */
+.prod ,
+.comp , 
+.conn {
+    position: absolute;
+    background-color: var(--White-text);
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 25px;
+    top: 30px;
+}
+.prod.open ,
+.comp.open , 
+.conn.open {
+    display: flex;
+}
+.prod {
+    right: 0;
+}
+.comp {
+    right: -6px;
+}
+.prod li a,
+.comp li a,
+.conn li a {
+    color: var(--Very-dark-grayish-blue-body-copy);
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+}
+.prod li a:hover,
+.comp li a:hover,
+.conn li a:hover {
+    color: var(--Very-dark-black-blue-footer-background);
+}
+
+/* options */
+.phone {
+    display: none;
+}
+.burger-icon {
+    opacity: 0;
+    transition: 0.3s;
+    position: relative;
+}
+.close-icon {
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+    top: 46px;
+    z-index: -1;
+}
+
+@media (max-width: 575px) {
+    
+    body {
+        text-align: center;
+    }
+    .phone {
+        display: block;
+    }
+    .desk {
+        display: none;
+    }
+    .landing {
+        background-image: linear-gradient(to bottom, var(--Very-light-red), var(--Light-red));
+	  min-height: 135vh;
+    }
+    .landing > img {
+        left: -75%;
+        top: -35%;
+    }
+    .landing .container .intro-text h1 {
+        font-size: 37px;
+    }
+    .landing .container .intro-text p {
+        font-size: 20px;
+    }
+    .landing .container .intro-text .intro-btns {
+        margin-top: 90px;
+    }
+    .designs-section {
+        padding: 100px 0 300px;
+    }
+    .designs-section h1 {
+        top: 0;
+    }
+    .designs-section .container {
+        flex-direction: column-reverse;
+    }
+    .designs-section .container .editor-photo {
+        width: initial;
+        left: initial;
+    }
+    .art-section .container {
+        flex-direction: column;
+        gap: 0;
+    }
+    .phone-illustration img {
+        width: 100%;
+    }
+    .art-section {
+        height: 70vh;
+    }
+    .art-section .circle img {
+        top: -40%;
+        left: -25%;
+        width: 150%;
+    }
+    .laptop-section .container {
+        flex-direction: column;
+    }
+    .laptop-section .container .laptop-photo {
+        width: initial;
+        right: 0;
+    }
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .footer {
+        padding: 65px;
+    }
+    .footer .first {
+        margin-top: 15px;
+    }
+
+
+    /* Drop Down List */
+    .burger-icon {
+        opacity: 1;
+    }
+    .landing .header nav {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 20px 0;
+        background-color: var(--White-text);
+        position: absolute;
+        width: 90%;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        transition: 0.5s;
+        transition-timing-function: ease-out;
+        opacity: 0;
+        top: -300%;
+    }
+    .landing .header nav.active {
+        top: 100%;
+        opacity: 1;
+    }
+    .landing .header nav .links {
+        flex-direction: column;
+        padding: 0;
+        gap: 25px;
+    }
+    .landing .header nav .reg-form {
+        flex-direction: column;
+        border-top: 1px solid var(--Grayish-blue-footer-text);
+        width: 100%;
+        gap: 20px;
+        margin-top: 30px;
+        padding: 30px 0px;
+    }
+    .landing .header nav .reg-form .signup {
+        background-image: linear-gradient(to right, var(--Very-light-red), var(--Light-red));
+        color: var(--White-text);
+    }
+    .landing .header nav .links li {
+        color: var(--Very-dark-black-blue-footer-background);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .landing .header nav .reg-form .login {
+        color: var(--Very-dark-black-blue-footer-background);
+    }
+    .landing .header nav .links li:hover,
+    .landing .header nav .links li.active {
+        color: var(--Grayish-blue-footer-text);
+    }
+    .landing .header nav .links li:hover span,
+    .landing .header nav .links li.active span {
+        text-decoration: none;
+    }
+    .landing .header nav .links li i {
+        color: var(--Light-red-CTA-text);
+    }
+    .prod, .comp, .conn {
+        top: 0;
+        position: relative;
+        padding: 25px 80px;
+        background-color: hsl(0deg 0% 93% / 65%);
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+        right: 0;
+    }
+    .landing .header {
+        justify-content: space-between;
+    }
+    .landing .header .burger-icon.active {
+        opacity: 0;
+        transform: scale(0.5);
+        z-index: -1;
+    }
+    .landing .header .close-icon.active {
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+}
